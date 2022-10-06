@@ -1,6 +1,6 @@
 ## curso-platzi-react-avanzado ⚛️
 
-**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev
+**¡Curso de React y Javascript! profesor:** 👉 https://www.youtube.com/midudev
 
 **¡Sígueme en Twitch para streams sobre desarrollo web!** 👉 https://www.twitch.tv/midudev
 
