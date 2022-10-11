@@ -1,1 +1,4 @@
-console.log('ALALALLALA!');
+import React from "react";
+import ReactDOM  from "react-dom";
+
+ReactDOM.render( 'Hoola mundo', document.getElementById('app') );
