@@ -8,9 +8,6 @@ export const ListOfCategories = () => {
 	const { categories, loading, error, msgError } = useCategories();
 	const [ showFixed, setShowFixed ] = useState( false )
 
-	console.log( error )
-	console.log( msgError )
-
 	useEffect( () => {
 		const onScroll = e => {
 			const newShowFixed = window.scrollY > 200
