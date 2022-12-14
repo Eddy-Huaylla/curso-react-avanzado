@@ -1,19 +1,15 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import { useCategories } from '../../hooks/useCategories'
 import { Category } from '../Category'
 
 import { List, Item } from './styles'
 
 export const ListOfCategories = () => {
-	const [ categories, setCategories ] = useState( [] );
+	const { categories, loading, error, msgError } = useCategories();
 	const [ showFixed, setShowFixed ] = useState( false )
 
-	useEffect( () => {
-		window.fetch('https://petgram-server-jhe-eddy-huaylla.vercel.app/categories')
-		.then(res => res.json())
-		.then(response => {
-			setCategories(response)
-		})
-	}, [] )
+	console.log( error )
+	console.log( msgError )
 
 	useEffect( () => {
 		const onScroll = e => {
@@ -29,15 +25,23 @@ export const ListOfCategories = () => {
 	const renderList = (fixed) => (
 		<List className={fixed ? 'fixed' : ''}>
 			{
-				categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
+				loading
+				? <Item key='loading'><Category /></Item>
+				: categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
 			}
 		</List>
 	)
 
 	return (
-		<Fragment>
-			{ renderList() }
-			{ showFixed && renderList(true) }
-		</Fragment>
+		<>
+			{
+				error
+				? <div> { msgError.toString() }</div>
+				: <Fragment>
+					{ renderList() }
+					{ showFixed && renderList(true) }
+				</Fragment>
+			}
+		</>
 	)
 }
