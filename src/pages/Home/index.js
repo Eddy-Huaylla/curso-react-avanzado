@@ -6,8 +6,6 @@ import { useParams } from "react-router-dom";
 export const Home = () => {
 	let params = useParams();
 
-	console.log( params );
-
 	return (
 		<Fragment>
 			<ListOfCategories />
