@@ -1,0 +1,10 @@
+query GET_PHOTO( $id:ID! ) {
+	photo( id:$id ) {
+		id
+		categoryId
+		src
+		likes
+		userId
+		liked
+	}
+}
