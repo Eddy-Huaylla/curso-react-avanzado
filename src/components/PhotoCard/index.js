@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
-import { ImgWrapper, Img, Button, Article } from './styles'
-import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
+import { ImgWrapper, Img, Article } from './styles'
 import { useLocalStorange } from '../../hooks/useLocalStorange'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { useMuationToogleLike } from '../../hooks/useMuationToogleLike'
