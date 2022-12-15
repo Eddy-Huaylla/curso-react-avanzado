@@ -1,0 +1,10 @@
+query LIST_PHOTOS_BY_CATEGORY( $categoryId: ID ) {
+  photos( categoryId: $categoryId ) {
+    id
+    categoryId
+    src
+    likes
+    userId
+    liked
+  }
+}
