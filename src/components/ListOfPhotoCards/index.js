@@ -1,10 +1,22 @@
 import React from 'react'
+import { useQuery } from '@apollo/client';
 import { PhotoCard } from '../PhotoCard'
+import listPhotos from '../../graphql/photo/queries/list-photos.gql'
 
 export const ListOfPhotoCards = () => {
+	const { loading, error, data } = useQuery( listPhotos );
+
+	if ( error ) {
+		return <h2>Internal Server Error</h2>
+	}
+
 	return (
 		<ul>
-		{[ 1, 2, 3, 4, 5, 6, 7 ].map( id => <PhotoCard key={ id } id={ id } />)}
+			{
+				loading
+				? <PhotoCard key='loading' />
+				: data.photos.map(photo => <PhotoCard key={ photo.id } { ...photo } />)
+			}
 		</ul>
 	)
 }

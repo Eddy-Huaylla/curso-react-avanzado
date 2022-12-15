@@ -1,22 +1,22 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-	mode: 'development',
-	output: {
-		filename: 'app.bundle.js'
+	mode   : 'development',
+	output : {
+		filename : 'app.bundle.js'
 	},
 	plugins: [
 		new HtmlWebpackPlugin( {
-			template: "src/index.html"
+			template : "src/index.html"
 		} )
 	],
 	module : {
 		rules : [
 			{
-				test : /\.js$/,
+				test    : /\.js$/,
 				exclude : /node_modules/,
-				use : {
-					loader : "babel-loader",
+				use     : {
+					loader  : "babel-loader",
 					options : {
 						presets : [
 							"@babel/preset-env",
@@ -24,6 +24,11 @@ module.exports = {
 						]
 					}
 				}
+			},
+			{
+				test: /\.(graphql|gql)$/,
+				exclude: /node_modules/,
+				loader: 'graphql-tag/loader',
 			}
 		]
 	}

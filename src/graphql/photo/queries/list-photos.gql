@@ -1,0 +1,10 @@
+query {
+  photos {
+    id
+    categoryId
+    src
+    likes
+    userId
+    liked
+  }
+}
