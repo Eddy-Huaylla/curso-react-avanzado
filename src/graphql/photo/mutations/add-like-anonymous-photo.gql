@@ -1,0 +1,7 @@
+mutation UPDATE_LIKE_ANONYMOUS_PHOTO( $input: LikePhoto! ) {
+	likeAnonymousPhoto( input: $input ) {
+		id,
+		liked,
+		likes
+	}
+}
