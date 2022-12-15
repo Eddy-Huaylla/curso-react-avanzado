@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/GlobalStyles'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
+import { NavBar } from './components/NavBar'
 
 export const App = () => {
 	return (
@@ -16,6 +17,8 @@ export const App = () => {
 					<Route path='/pet/:id' element={ <Home /> } />
 					<Route path='/detail/:detailId' element={ <Detail /> } />
 			</Routes>
+
+			<NavBar />
 		</BrowserRouter>
 	)
 }
