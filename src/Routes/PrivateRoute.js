@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Favs } from '../pages/Favs'
 import { User } from '../pages/User'
 import { Login } from '../pages/Login'
 import { Route, Routes } from 'react-router-dom'
+import AuthContext from '../context/AuthContext'
 
-export const PrivateRoute = ( { isAuth } ) => {
+export const PrivateRoute = () => {
+	const {  isAuth } = useContext( AuthContext );
+
 	return (
 		<Routes>
 			{
