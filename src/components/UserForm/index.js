@@ -1,11 +1,12 @@
 import React, { useContext } from "react"
 import { useNavigate } from "react-router-dom";
+import { Form, Input, Button, Title } from './styles'
 
 import AuthContext from "../../context/AuthContext";
 
 import { useForm } from "../../hooks/useForm"
 
-export const UserForm = () => {
+export const UserForm = ( { title } ) => {
 	const { activateAuth } = useContext( AuthContext )
 	const navigate         = useNavigate()
 
@@ -22,12 +23,12 @@ export const UserForm = () => {
 
 	return (
 		<>
-			<form ref={ ref } onSubmit = { onSubmit }>
-				<input type='text' name='email' placeholder='Email' />
-				<input type='password' name='password' placeholder='Password' />
-				<button type='submit'>Sing in</button>
-				{ console.log('render') }
-			</form>
+			<Title>{ title }</Title>
+			<Form ref={ ref } onSubmit = { onSubmit }>
+				<Input type='text' name='email' placeholder='Email' />
+				<Input type='password' name='password' placeholder='Password' />
+				<Button type='submit'>{ title }</Button>
+			</Form>
 		</>
 	)
 }

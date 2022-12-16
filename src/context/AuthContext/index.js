@@ -15,7 +15,6 @@ export const AuthProvider = ( { children } ) => {
 			} )
 		},
 		desactivateAuth: () => {
-			console.log( 'desactivateAuth' )
 			dispatch(
 				{
 					type    : 'IS_AUTH',

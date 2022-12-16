@@ -4,8 +4,8 @@ import { UserForm } from "../../components/UserForm";
 export const Login = () => {
 	return (
 		<section>
-			<h1>Register</h1>
-			<UserForm />
+			<UserForm title = "Iniciar sesión"/>
+			<UserForm title = "Registrarse"/>
 		</section>
 	)
 }
