@@ -1,0 +1,3 @@
+mutation REGISTER_USER ($input: UserCredentials!) {
+	signup (input: $input)
+}

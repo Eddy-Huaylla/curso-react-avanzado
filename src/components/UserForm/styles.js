@@ -21,10 +21,20 @@ export const Button = styled.button`
 	display: block;
 	width: 100%;
 	text-align: center;
+
+	&:disabled {
+		pointer-events: none;
+		background: dimgrey;
+	}
 `
 
 export const Title = styled.h2`
 	font-size: 16px;
 	font-weight: 500;
 	padding: 8px 0;
+`
+
+export const Span = styled.span`
+	font-weight: 500;
+	color: rgb(227, 96, 73);
 `
