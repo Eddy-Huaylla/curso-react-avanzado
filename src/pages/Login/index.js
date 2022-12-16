@@ -1,23 +1,11 @@
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
+import React from "react";
+import { UserForm } from "../../components/UserForm";
 
 export const Login = () => {
-	const navigate         = useNavigate()
-	const { activateAuth } = useContext( AuthContext )
-
-	const handleSubmit = e => {
-		e.preventDefault()
-		activateAuth()
-		navigate('/user')
-	}
-
 	return (
 		<section>
 			<h1>Register</h1>
-			<form onSubmit = { handleSubmit } >
-				<button>Iniciar Sesión</button>
-			</form>
+			<UserForm />
 		</section>
 	)
 }
