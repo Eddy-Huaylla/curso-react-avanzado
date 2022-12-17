@@ -19,8 +19,17 @@ export const useLocalStorange = ( key, initialValue ) => {
 		}
 	}
 
+	const removeLocalStorange = () => {
+		try {
+			window.localStorage.removeItem( key )
+		} catch (e) {
+			console.error( e )
+		}
+	}
+
 	return {
 		value,
-		setLocalStorage
+		setLocalStorage,
+		removeLocalStorange
 	}
 }

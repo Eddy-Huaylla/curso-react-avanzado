@@ -13,7 +13,7 @@ export const Login = () => {
 	const navigate         = useNavigate()
 
 	const { registerMutation, loadingRegister, errorRegister } = useRegisterMutation()
-	const { loginMutation, loadingLogin, errorLogin}           = useLoginMutation()
+	const { loginMutation, loadingLogin, errorLogin }          = useLoginMutation()
 
 
 	const submitRegister = ( fields ) => {

@@ -5,7 +5,7 @@ import reducer from './reducer'
 const AuthContext = createContext()
 
 export const AuthProvider = ( { children } ) => {
-	const { value : token, setLocalStorage : setToken } = useLocalStorange( 'token', '' )
+	const { value : token, setLocalStorage : setToken, removeLocalStorange } = useLocalStorange( 'token', '' )
 
 	const [ state, dispatch ] = useReducer(
 		reducer,
@@ -23,14 +23,14 @@ export const AuthProvider = ( { children } ) => {
 			} )
 			setToken( token )
 		},
-		desactivateAuth: ( token ) => {
+		desactivateAuth: () => {
 			dispatch(
 				{
 					type    : 'IS_AUTH',
 					payload : false
 				}
 			)
-			setToken( token )
+			removeLocalStorange()
 		}
 	}
 

@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { NavBar } from './components/NavBar'
 import { Routes } from './Routes'
+import { AlertActivate } from './container/AlertActivate'
 
 export const App = () => {
 	return (
@@ -13,6 +14,7 @@ export const App = () => {
 			<Logo />
 			<Routes />
 			<NavBar />
+			<AlertActivate />
 		</BrowserRouter>
 	)
 }
