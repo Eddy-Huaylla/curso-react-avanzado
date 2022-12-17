@@ -1,7 +1,8 @@
 import React from "react"
-import { Form, Input, Button, Title, Span } from './styles'
+import { Form, Input, Title, Span } from './styles'
 
 import { useForm } from "../../hooks/useForm"
+import { SubmitButton } from "../submitButton";
 
 export const UserForm = ( { title, submit : handleSubmit, loading = false, messageError = null } ) => {
 	const { ref, submit } = useForm();
@@ -19,7 +20,7 @@ export const UserForm = ( { title, submit : handleSubmit, loading = false, messa
 			<Form ref={ ref } onSubmit = { onSubmit }>
 				<Input type='text' name='email' placeholder='Email' />
 				<Input type='password' name='password' placeholder='Password' />
-				<Button type='submit' disabled = { loading }>{ title }</Button>
+				<SubmitButton type='submit' disabled = { loading }>{ title }</SubmitButton>
 			</Form>
 		</>
 	)
