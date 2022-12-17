@@ -14,7 +14,7 @@ export const PhotoCard = ( { id, likes = 0, src = DEFAULT_IMAGE } ) => {
 
 	const key = `like-${id}`
 
-	const [ liked, setLiked ] = useLocalStorange(key, false );
+	const { value: liked, setLocalStorage : setLiked } = useLocalStorange(key, false );
 
 	const handleFavClick = () => {
 		!liked && mutation( {

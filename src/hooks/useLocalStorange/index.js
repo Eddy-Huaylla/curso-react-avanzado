@@ -19,8 +19,8 @@ export const useLocalStorange = ( key, initialValue ) => {
 		}
 	}
 
-	return [
+	return {
 		value,
 		setLocalStorage
-	]
+	}
 }

@@ -13,17 +13,15 @@ export const Login = () => {
 	const navigate         = useNavigate()
 
 	const { registerMutation, loadingRegister, errorRegister } = useRegisterMutation()
-	const {  loginMutation, loadingLogin, errorLogin}          = useLoginMutation()
+	const { loginMutation, loadingLogin, errorLogin}           = useLoginMutation()
 
-	const [ token, setToken ] = useState( '' )
 
 	const submitRegister = ( fields ) => {
 		registerMutation( { variables : {
 			input : fields
 		} } )
 		.then( response => {
-			setToken( response.data.signup )
-			activateAuth()
+			activateAuth( response.data.signup )
 			navigate('/user')
 		})
 	}
@@ -37,8 +35,7 @@ export const Login = () => {
 			}
 		)
 		.then( response => {
-			setToken( response.data.login )
-			activateAuth()
+			activateAuth( response.data.login )
 			navigate('/user')
 		} )
 
