@@ -22,6 +22,7 @@ export const AuthProvider = ( { children } ) => {
 				payload : true
 			} )
 			setToken( token )
+			__APOLLO_CLIENT__.resetStore()
 		},
 		desactivateAuth: () => {
 			dispatch(
@@ -31,6 +32,7 @@ export const AuthProvider = ( { children } ) => {
 				}
 			)
 			removeLocalStorange()
+			__APOLLO_CLIENT__.resetStore()
 		}
 	}
 

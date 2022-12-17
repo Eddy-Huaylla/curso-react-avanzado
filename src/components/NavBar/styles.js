@@ -6,14 +6,14 @@ export const Nav = styled.nav`
   align-items: center;
   background: #fcfcfc;
   border-top: 1px solid #e0e0e0;
-  bottom: -1px;
+  bottom: 0px;
   display: flex;
   height: 50px;
   justify-content: space-around;
   left: 0;
   margin: 0 auto;
   max-width: 500px;
-  position: sticky;
+  position: fixed;
   right: 0;
   width: 100%;
   z-index: 1000;
@@ -27,8 +27,8 @@ export const NavLink = styled( LinkRouter )`
   justify-content: center;
   text-decoration: none;
   width: 100%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 
 	&[aria-current] {
 		color: #000;
