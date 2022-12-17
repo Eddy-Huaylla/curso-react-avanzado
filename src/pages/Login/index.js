@@ -6,42 +6,57 @@ import AuthContext from "../../context/AuthContext";
 import { UserForm } from "../../components/UserForm";
 
 import { useRegisterMutation } from "../../hooks/useRegisterMutation";
+import { useLoginMutation } from "../../hooks/useLoginMutation";
 
 export const Login = () => {
-	const { activateAuth }     = useContext( AuthContext )
+	const { activateAuth } = useContext( AuthContext )
+	const navigate         = useNavigate()
+
 	const { registerMutation, loadingRegister, errorRegister } = useRegisterMutation()
-	const navigate             = useNavigate()
+	const {  loginMutation, loadingLogin, errorLogin}          = useLoginMutation()
 
 	const [ token, setToken ] = useState( '' )
 
 	const submitRegister = ( fields ) => {
-		console.log( fields );
 		registerMutation( { variables : {
 			input : fields
 		} } )
 		.then( response => {
 			setToken( response.data.signup )
-			submitAuth( fields )
+			activateAuth()
+			navigate('/user')
 		})
 	}
 
 	const submitAuth = ( fields ) => {
-		activateAuth()
-		navigate('/user')
-		console.log( 'fields', fields );
+		loginMutation(
+			{
+				variables : {
+					input : fields
+				}
+			}
+		)
+		.then( response => {
+			setToken( response.data.login )
+			activateAuth()
+			navigate('/user')
+		} )
+
 	}
 
 	return (
 		<section>
 			<UserForm
-				title  = "Registrarse"
-				submit = { submitRegister }
-				loading = { loadingRegister }
+				title        = "Registrarse"
+				submit       = { submitRegister }
+				loading      = { loadingRegister }
 				messageError = { errorRegister?.message }
 			/>
 			<UserForm
-				title  = "Iniciar sesión"
-				submit = { submitAuth }
+				title        = "Iniciar sesión"
+				submit       = { submitAuth }
+				loading      = { loadingLogin }
+				messageError = { errorLogin?.message }
 			/>
 		</section>
 	)

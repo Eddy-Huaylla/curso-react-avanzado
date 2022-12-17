@@ -1,0 +1,3 @@
+mutation LOGIN_USER ($input: UserCredentials!) {
+	login (input: $input)
+}
