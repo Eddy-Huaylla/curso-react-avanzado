@@ -1,0 +1,9 @@
+query GET_FAVORITES {
+	favs {
+		id
+		categoryId
+		src
+		likes
+		userId
+	}
+}

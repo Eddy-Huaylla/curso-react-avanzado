@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import Skeleton from 'react-loading-skeleton'
 import { useCategories } from '../../hooks/useCategories'
 import { Category } from '../Category'
 
@@ -23,7 +24,7 @@ export const ListOfCategories = () => {
 		<List className={fixed ? 'fixed' : ''}>
 			{
 				loading
-				? <Item key='loading'><Category /></Item>
+				? <Item key='loading'><Skeleton count = { 3 } width = { 75 }/></Item>
 				: categories.map(category =>
 					<Item key={ category.id }>
 						<Category {...category} path={ `/pet/${category.id}` } />

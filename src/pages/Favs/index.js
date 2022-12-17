@@ -1,5 +1,8 @@
 import React from "react";
+import { ListOfFavorites } from "../../components/ListOfFavorites";
 
 export const Favs = () => {
-	return <h1> Page Favs</h1>
+	return (
+		<ListOfFavorites />
+	)
 }
