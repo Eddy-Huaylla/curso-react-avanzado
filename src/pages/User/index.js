@@ -4,7 +4,7 @@ import { Layout } from "../../components/Layout";
 import { SubmitButton } from "../../components/submitButton";
 import AuthContext from "../../context/AuthContext";
 
-export const User = () => {
+export default () => {
 	const navigate            = useNavigate()
 	const { desactivateAuth } = useContext( AuthContext )
 

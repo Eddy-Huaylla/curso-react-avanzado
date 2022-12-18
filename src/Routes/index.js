@@ -1,20 +1,23 @@
-import React, { useContext } from "react"
+import React, { Suspense, useContext } from "react"
 import { Routes as RoutesDom, Route, Navigate } from 'react-router-dom'
 
+import Spinner from "../components/Spinner";
+
 import { Home } from '../pages/Home'
-import { Login } from '../pages/Login'
-import { Detail } from '../pages/Detail'
-import { User } from "../pages/User"
-import { Favs } from "../pages/Favs"
-import { NotFound } from "../pages/NotFound"
 
 import AuthContext from "../context/AuthContext"
+
+const Login = React.lazy(() => import('../pages/Login'));
+const Detail = React.lazy(() => import('../pages/Detail'));
+const User = React.lazy(() => import('../pages/User'));
+const Favs = React.lazy(() => import('../pages/Favs'));
+const NotFound = React.lazy(() => import('../pages/NotFound'));
 
 export const Routes = () => {
 	const {  isAuth } = useContext( AuthContext );
 
 	return (
-		<>
+		<Suspense fallback = { <Spinner /> }>
 			<RoutesDom>
 				<Route index path = '/' element = { <Home /> } />
 				<Route path = '/login' element = { <Login /> } />
@@ -27,6 +30,6 @@ export const Routes = () => {
 				<Route path = '/*' element={ <NotFound /> } />
 			</RoutesDom>
 
-		</>
+		</Suspense>
 	)
 }

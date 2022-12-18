@@ -9,7 +9,7 @@ import { useRegisterMutation } from "../../hooks/useRegisterMutation";
 import { useLoginMutation } from "../../hooks/useLoginMutation";
 import { Layout } from "../../components/Layout";
 
-export const Login = () => {
+export default () => {
 	const { activateAuth } = useContext( AuthContext )
 	const navigate         = useNavigate()
 
