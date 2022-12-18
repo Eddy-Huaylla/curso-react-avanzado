@@ -7,6 +7,7 @@ import { UserForm } from "../../components/UserForm";
 
 import { useRegisterMutation } from "../../hooks/useRegisterMutation";
 import { useLoginMutation } from "../../hooks/useLoginMutation";
+import { Layout } from "../../components/Layout";
 
 export const Login = () => {
 	const { activateAuth } = useContext( AuthContext )
@@ -42,7 +43,7 @@ export const Login = () => {
 	}
 
 	return (
-		<section>
+		<Layout title='Login' subtitle='Inicia session para ver un mundo nuevo'>
 			<UserForm
 				title        = "Registrarse"
 				submit       = { submitRegister }
@@ -55,6 +56,6 @@ export const Login = () => {
 				loading      = { loadingLogin }
 				messageError = { errorLogin?.message }
 			/>
-		</section>
+		</Layout>
 	)
 }

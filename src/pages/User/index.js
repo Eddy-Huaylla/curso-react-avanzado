@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Layout } from "../../components/Layout";
 import { SubmitButton } from "../../components/submitButton";
 import AuthContext from "../../context/AuthContext";
 
 export const User = () => {
-	const navigate         = useNavigate()
+	const navigate            = useNavigate()
 	const { desactivateAuth } = useContext( AuthContext )
 
 	const handleSubmit = e => {
@@ -14,9 +15,8 @@ export const User = () => {
 	}
 
 	return (
-		<div>
-			<h1> Page User</h1>
-			<SubmitButton onClick={ handleSubmit }>Cerra Sesión</SubmitButton>
-		</div>
+		<Layout title = 'Mi cuenta' subtitle = 'Mi cuenta'>
+			<SubmitButton onClick = { handleSubmit }>Cerra Sesión</SubmitButton>
+		</Layout>
 	)
 }

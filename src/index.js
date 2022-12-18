@@ -24,8 +24,11 @@ const authLink = setContext( ( _, { headers } ) => {
 	}
 })
 
-const errorMiddleware = onError( ( { networkError } ) => {
-	if ( networkError && networkError.result.code === 'invalid_token' ) {
+const errorMiddleware = onError( ( { graphQLErrors, networkError, response } ) => {
+	if (
+		networkError && networkError.result.code === 'invalid_token' ||
+		graphQLErrors.length > 0 && graphQLErrors[0].message === 'user does not exist'
+	) {
 		window.localStorage.removeItem( 'token' )
 		window.location = '/user'
 	}
