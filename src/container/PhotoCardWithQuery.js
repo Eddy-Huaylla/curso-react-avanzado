@@ -8,7 +8,7 @@ const render = ( { loading, error, data } ) => {
 
 	if( error ) return <h2> Internal Server Error </h2>
 
-	return loading ? <PhotoCard /> : <PhotoCard {...photo} />
+	return loading ? <PhotoCard id = 'loading' liked = { false } likes = { 0 } /> : <PhotoCard {...photo} />
 }
 
 export const PhotoCardWithQuery = ( { id } ) => (

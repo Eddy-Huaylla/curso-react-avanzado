@@ -17,7 +17,7 @@ export const ListOfPhotoCards = ( { categoryId = 0 } ) => {
 		<ul>
 			{
 				loading
-				? <PhotoCard key='loading' />
+				? <PhotoCard key='loading' id = 'loading' liked = { false } likes = { 0 } />
 				: data.photos.map(photo => <PhotoCard key={ photo.id } { ...photo } />)
 			}
 		</ul>
