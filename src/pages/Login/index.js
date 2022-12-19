@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext"
 
-import { UserForm } from "../../components/UserForm";
+import { UserForm } from "../../components/UserForm"
 
-import { useRegisterMutation } from "../../hooks/useRegisterMutation";
-import { useLoginMutation } from "../../hooks/useLoginMutation";
-import { Layout } from "../../components/Layout";
+import { useRegisterMutation } from "../../hooks/useRegisterMutation"
+import { useLoginMutation } from "../../hooks/useLoginMutation"
+import { Layout } from "../../components/Layout"
 
 export default () => {
 	const { activateAuth } = useContext( AuthContext )

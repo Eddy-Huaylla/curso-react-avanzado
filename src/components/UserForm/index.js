@@ -2,15 +2,15 @@ import React from "react"
 import { Form, Input, Title, Span } from './styles'
 
 import { useForm } from "../../hooks/useForm"
-import { SubmitButton } from "../submitButton";
+import { SubmitButton } from "../SubmitButton"
 
 export const UserForm = ( { title, submit : handleSubmit, loading = false, messageError = null } ) => {
-	const { ref, submit } = useForm();
+	const { ref, submit } = useForm()
 
 	const onSubmit = ( e ) => {
 		e.preventDefault()
 		const formEntries = submit( ref )
-		handleSubmit( formEntries );
+		handleSubmit( formEntries )
 	}
 
 	return (

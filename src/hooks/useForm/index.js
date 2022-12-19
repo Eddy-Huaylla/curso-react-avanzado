@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from "react"
 
 export const useForm = () => {
 	const ref = useRef( null )
@@ -11,7 +11,7 @@ export const useForm = () => {
 	const submit = ( form_ref) => {
 		const formEntries = getValues( form_ref )
 
-		return formEntries;
+		return formEntries
 	}
 
 	return {

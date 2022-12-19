@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client'
 import { PhotoCard } from '../PhotoCard'
 import LIST_PHOTOS from '../../graphql/photo/queries/list-photos.gql'
 import LIST_PHOTOS_BY_CATEGORY from '../../graphql/photo/queries/list-photos-by-category.gql'

@@ -4,7 +4,7 @@ export const useCategories = () => {
 	const [ categories, setCategories ] = useState( [] )
 	const [ loading, setLoading ] = useState( false )
 	const [ error, setError ] = useState( false )
-	const [ msgError, setMsgError ] = useState( '' );
+	const [ msgError, setMsgError ] = useState( '' )
 
 	useEffect(function () {
 		setLoading(true)

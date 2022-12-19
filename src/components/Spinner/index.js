@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoadingIcon, SpinnerBox, Text } from './styles';
+import { LoadingIcon, SpinnerBox, Text } from './styles'
 
 export default () => {
 	return (
@@ -7,5 +7,5 @@ export default () => {
 		<LoadingIcon className="loading-icon" />
 		<Text>Loading...</Text>
 	</SpinnerBox>
-	);
-};
+	)
+}

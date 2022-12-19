@@ -1,6 +1,6 @@
-import React from "react";
-import { Layout } from "../../components/Layout";
-import { ListOfFavorites } from "../../components/ListOfFavorites";
+import React from "react"
+import { Layout } from "../../components/Layout"
+import { ListOfFavorites } from "../../components/ListOfFavorites"
 
 export default () => {
 	return (

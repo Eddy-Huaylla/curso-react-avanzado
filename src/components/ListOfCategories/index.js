@@ -6,7 +6,7 @@ import { Category } from '../Category'
 import { List, Item } from './styles'
 
 const ListOfCategoriesComponent  = () => {
-	const { categories, loading, error, msgError } = useCategories();
+	const { categories, loading, error, msgError } = useCategories()
 	const [ showFixed, setShowFixed ] = useState( false )
 
 	useEffect( () => {

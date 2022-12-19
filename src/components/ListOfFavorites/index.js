@@ -1,7 +1,7 @@
-import React from "react";
-import Skeleton from "react-loading-skeleton";
-import { useFavorites } from "../../hooks/useFavorites";
-import { Grid, Image, Link } from "./styles";
+import React from "react"
+import Skeleton from "react-loading-skeleton"
+import { useFavorites } from "../../hooks/useFavorites"
+import { Grid, Image, Link } from "./styles"
 
 export const ListOfFavorites = () => {
 	const { favorites, loadingFavorites, errorFavorites } = useFavorites()

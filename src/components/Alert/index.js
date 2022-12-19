@@ -1,5 +1,5 @@
-import React from "react";
-import { Div } from "./styles";
+import React from "react"
+import { Div } from "./styles"
 
 const TYPED_COLOR = {
 	default : '#999999',
@@ -10,7 +10,7 @@ const TYPED_COLOR = {
 }
 
 export const Alert = ( { type = '', message }) => {
-	const color = TYPED_COLOR[ type ] ? TYPED_COLOR[ type ] : TYPED_COLOR.default;
+	const color = TYPED_COLOR[ type ] ? TYPED_COLOR[ type ] : TYPED_COLOR.default
 
 	return <Div color = { color } >
 		{ message }
